@@ -1,8 +1,26 @@
 const { gql } = require('apollo-server-express');
 
+
 const typeDefs = gql`
+  type Parent {
+    _id: ID
+    parentFirstName: String
+    parentLastName: String
+    email: String
+    phone: Int
+    address: String
+    students: [Student]
+  }
+  type Student {
+    _id: ID
+    studentFirstName: String
+    studentLastName: String
+    birthdate: String
+    gender: String
+    gradeEntering: String
+  }
   type Query {
-    helloWorld: String
+    parent: [Parent]
   }
 `;
 

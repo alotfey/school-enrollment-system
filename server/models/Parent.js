@@ -1,5 +1,5 @@
-const { default: mongoose } = require('mongoose');
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const parentSchema = new Schema({
   parentFirstName: {
@@ -10,6 +10,7 @@ const parentSchema = new Schema({
   },
   email: {
     type: String,
+    match: [/.+@.+\..+/, 'Must match an email address!']
   },
   phone: {
     type: Number,
@@ -17,6 +18,12 @@ const parentSchema = new Schema({
   address: {
     type: String,
   },
+  students: [
+      {
+          type: Schema.Types.ObjectId,
+          ref: 'Student'
+      }
+  ]
 });
 
 const Parent = mongoose.model('Parent', parentSchema);

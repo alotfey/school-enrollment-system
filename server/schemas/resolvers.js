@@ -1,8 +1,10 @@
+const { Parent, Student } = require('../models');
+
 const resolvers = {
   Query: {
-    helloWorld: () => {
-      return 'Hello grphQl';
-    },
+    parent: async () => {
+      return Parent.find()
+    }
   },
 };
 
