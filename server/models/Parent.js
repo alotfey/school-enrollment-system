@@ -13,7 +13,7 @@ const parentSchema = new Schema({
     match: [/.+@.+\..+/, 'Must match an email address!']
   },
   phone: {
-    type: Number,
+    type: String,
   },
   address: {
     type: String,

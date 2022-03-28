@@ -7,7 +7,7 @@ const typeDefs = gql`
     parentFirstName: String
     parentLastName: String
     email: String
-    phone: Int
+    phone: String
     address: String
     students: [Student]
   }
